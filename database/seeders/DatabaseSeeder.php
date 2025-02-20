@@ -18,11 +18,11 @@ class DatabaseSeeder extends Seeder
 
         // Student DB
         Students::create([
-            'name' => 'Jaymark Duran',
+            'name' => 'jaymark',
             'age' => 20,
         ]);
         Students::create([
-            'name' => 'JP moto',
+            'name' => 'JPmoto',
             'age' => 22,
         ]);
     }
