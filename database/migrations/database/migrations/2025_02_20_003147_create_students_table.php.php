@@ -12,11 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('students', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->integer('age')->nullable();
-            $table->timestamps();
+            $table->id(); // Auto-incrementing primary key
+            $table->string('name'); // String column for student name
+            $table->integer('age')->nullable(); // Integer column for age, allowing NULL values
+            $table->string('gender')->nullable();
+            $table->timestamps(); // Automatically adds 'created_at' and 'updated_at'
         });
+        
     }
 
     /**
