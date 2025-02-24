@@ -13,4 +13,18 @@ class StudentsController extends Controller
         $students = Students::all();
         return view('studentList', compact('students'));
     }
+
+    public function newStudent(Request $request)
+    {
+        $request->validate([
+            'stdName' => 'required|max:300',
+            'stdAge' => 'required|numeric',
+        ]);
+
+        $input['name'] = $request->stdName;
+        $input['age'] = $request->stdAge;
+        Students::create($input);
+
+        return redirect()->route('std.index')->with('success', 'Student created successfully.');
+    }
 }
