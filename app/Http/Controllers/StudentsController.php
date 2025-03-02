@@ -27,4 +27,37 @@ class StudentsController extends Controller
 
         return redirect()->route('std.index')->with('success', 'Student created successfully.');
     }
+
+    public function destroy($id)
+{
+    $student = Students::find($id);
+
+    if (!$student) {
+        return redirect()->back()->with('error', 'Student not found.');
+    }
+
+    $student->delete();
+    return redirect()->back()->with('success', 'Student deleted successfully.');
+}
+public function update(Request $request, $id)
+{
+    $request->validate([
+        'stdName' => 'required|string|max:255',
+        'stdAge' => 'required|integer',
+    ]);
+
+    $student = Students::find($id);
+
+    if (!$student) {
+        return redirect()->back()->with('error', 'Student not found.');
+    }
+
+    $student->name = $request->stdName;
+    $student->age = $request->stdAge;
+    $student->save();
+
+    return redirect()->back()->with('success', 'Student updated successfully.');
+}
+
+    
 }
