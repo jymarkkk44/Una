@@ -12,7 +12,7 @@
                 <th>#</th>
                 <th>Name</th>
                 <th>Email</th>
-                <th>Created At</th>
+                <!-- <th>Created At</th> -->
             </tr>
         </thead>
         <tbody>
@@ -21,7 +21,7 @@
                 <td>{{ $key + 1 }}</td>
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
-                <td>{{ $user->created_at->format('Y-m-d H:i') }}</td>
+                <!-- <td>{{ $user->created_at->format('Y-m-d H:i') }}</td> -->
             </tr>
             @endforeach
         </tbody>

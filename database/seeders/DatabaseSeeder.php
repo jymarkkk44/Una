@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory(1000)->create();
+        User::factory(100)->create();
 
         // Student DB
         Students::create([
@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
             'age' => 20,
         ]);
         Students::create([
-            'name' => 'JPmoto',
+            'name' => 'Cyril Jed Kyle Estrellada',
             'age' => 22,
         ]);
     }
